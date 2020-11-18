@@ -1,23 +1,37 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
-const Row =({FullName , Bio , Profession , Image ,Alert}) => (
+const Profile =(props) => (
     <div>
         <div>
-            <span>FullName : {FullName}</span>
+            <span>FullName : {props.FullName}</span>
         </div>
+        <br/>
         <div>
-            <span>Bio : {Bio}</span>
+            <span>Bio : {props.Bio}</span>
         </div>
+        <br/>
         <div>
-            <span>Profession :{Profession}</span>
+            <span>Profession :{props.Profession}</span>
         </div>
+        <br/>
         <div>
-            <img src={Image} />
+            <img src={props.children} style={{width: "400px" }} alt="Me"/>
         </div>
+        <br/>
         <div>
-            <button onClick={Alert} >click me</button>
+            <button onClick={props.Alert} >click me</button>
         </div>
     </div>
 );
 
-export default Row
+Profile.defaultProps ={
+    FullName:25,
+    Bio:"Hello"
+}
+
+Profile.propTypes= {
+    FullName: PropTypes.string
+  }
+
+export default Profile

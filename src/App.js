@@ -1,13 +1,20 @@
 
 import './App.css';
-import Row from "./profile/Profile"
+import Profile from "./profile/Profile"
+import Image from "./img15.jpg"
+
+
 
 function App() {
   return (
     <div className="App">
-      <Row/>
+      <Profile  Bio="Hello bio" Alert={()=> alert("Hello Mahdi")} Profession="etudiant" >
+        {Image}
+      </Profile>
     </div>
   );
 }
+
+
 
 export default App;
